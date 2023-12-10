@@ -1,5 +1,36 @@
 {
   "sections": {
+    "39ffc4ea-c4dc-460d-9afe-85c3caa4c622": {
+      "type": "section-slider-products",
+      "blocks": {
+        "eafa80e2-4c4d-47a3-b2e4-cc949303a33e": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fleece-retro-print-joggers-green"
+          }
+        },
+        "9d39a528-a910-4e81-b11f-21e46198b03f": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fleece-retro-print-joggers-green"
+          }
+        },
+        "acfdc817-128b-40b6-9cc9-796cea4f14e5": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "кросівки-ultraboost-22-cold-rdy-2-0"
+          }
+        }
+      },
+      "block_order": [
+        "eafa80e2-4c4d-47a3-b2e4-cc949303a33e",
+        "9d39a528-a910-4e81-b11f-21e46198b03f",
+        "acfdc817-128b-40b6-9cc9-796cea4f14e5"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -68,18 +99,11 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
-    },
-    "06d20a7b-8bbd-44f6-bde6-f848b1ab9989": {
-      "type": "section-slider-products",
-      "disabled": true,
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
+    "39ffc4ea-c4dc-460d-9afe-85c3caa4c622",
     "image_banner",
-    "featured_collection",
-    "06d20a7b-8bbd-44f6-bde6-f848b1ab9989"
+    "featured_collection"
   ]
 }

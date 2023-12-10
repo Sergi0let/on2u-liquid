@@ -1,28 +1,42 @@
-<div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-  {%- for block in section.blocks -%}
-    {% render block %}
-  {%- endfor -%}
+{% comment %} .slider-product-proposal>page-width.slider-product-proposal__container>.slider-product-proposal__content>.h2.slider-product-proposal__title+..slider-product-proposal__subtitle^+..slider-product-proposal__slider>.slider-product-proposal__item {% endcomment %}
+
+
+{% if section.blocks.size > 0 %}<div class="slider-product-proposal">
+  <div class="slider-product-proposal__container page-width">
+    <div class="slider-product-proposal__content">
+      <div class="slider-product-proposal__title">Product Title </div>
+        <div class="slider-product-proposal__subtitle">Product Subtitle</div>
+      </div>
+    <div class="slider-product-proposal__slider">
+      <div class="slider-product-proposal__slider-list">
+        {% for block in section.blocks %}
+          {% if block.settings.proposal_product != blank %}
+          {% assign product = block.settings.proposal_product %}
+            <div class="slider-product-proposal__slider-item"><h4 class="slider-item__title">{{ product.title  }}</h4></div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
+{% endif  %}
+
 {{ 'slick.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'jquery-3.7.1.min.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    console.log("prod init ==================")
+    $('#shopify-section-{{section.id}} .slider-product-proposal__slider-list').slick()
   })
 </script>
+
 {% schema %}
 {
   "name": "Slider Products",
   "tag": "section",
   "class": "section",
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "include_margins",
-      "default": true,
-      "label": "t:sections.apps.settings.include_margins.label"
-    }
+
   ],
   "blocks": [
     {
