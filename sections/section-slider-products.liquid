@@ -1,60 +1,76 @@
 {% comment %} .slider-product-proposal>page-width.slider-product-proposal__container>.slider-product-proposal__content>.h2.slider-product-proposal__title+..slider-product-proposal__subtitle^+..slider-product-proposal__slider>.slider-product-proposal__item {% endcomment %}
 
 
-{% if section.blocks.size > 0 %}<div class="slider-product-proposal">
-  <div class="slider-product-proposal__container page-width">
-    <div class="slider-product-proposal__content">
-      <div class="slider-product-proposal__title">Product Title </div>
+{% if section.blocks.size > 0 %}
+  <div class="slider-product-proposal">
+    <div class="slider-product-proposal__container page-width">
+      <div class="slider-product-proposal__content">
+        <div class="slider-product-proposal__title">Product Title
+        </div>
         <div class="slider-product-proposal__subtitle">Product Subtitle</div>
       </div>
-    <div class="slider-product-proposal__slider">
-      <div class="slider-product-proposal__slider-list">
-        {% for block in section.blocks %}
-          {% if block.settings.proposal_product != blank %}
-          {% assign product = block.settings.proposal_product %}
-            <div class="slider-product-proposal__slider-item"><h4 class="slider-item__title">{{ product.title  }}</h4></div>
-          {% endif %}
-        {% endfor %}
+      <div class="slider-product-proposal__slider">
+        <div class="slider-product-proposal__slider-list">
+          {% for block in section.blocks %}
+            {% if block.settings.proposal_product != blank %}
+              {% assign product = block.settings.proposal_product %}
+              <div class="slider-product-proposal__slider-item">
+                <h4 class="slider-item__title">{{ product.title }}</h4>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
-</div>
-{% endif  %}
+{% endif %}
 
 {{ 'slick.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'jquery-3.7.1.min.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    $('#shopify-section-{{section.id}} .slider-product-proposal__slider-list').slick()
+    $('#shopify-section-{{section.id}} .slider-product-proposal__slider-list').slick({
+  infinite: true,
+  slidesToShow: {{ section.settings.slider_items }},
+  slidesToScroll: 2
+  });
   })
 </script>
 
 {% schema %}
-{
-  "name": "Slider Products",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-
-  ],
-  "blocks": [
-    {
-      "type": "product",
-      "name": "Proposal product",
-      "settings": [
-        {
-          "type": "product",
-          "id": "proposal_product",
-          "label": "Our proposal Product"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Slider Products"
-    }
-  ]
-}
+  {
+    "name": "Slider Products",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "slider_items",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "label": "Show sliders",
+        "default": 2
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Proposal product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "proposal_product",
+            "label": "Our proposal Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slider Products"
+      }
+    ]
+  }
 {% endschema %}
