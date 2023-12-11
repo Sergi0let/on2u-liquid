@@ -3,6 +3,7 @@
     "cda30115-3686-4481-8572-269a481fa42b": {
       "type": "image-get-links",
       "settings": {
+        "get_image_v1": "shopify:\/\/shop_images\/kyiv2021_45.jpg"
       }
     },
     "image_banner": {
