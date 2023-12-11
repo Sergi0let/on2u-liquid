@@ -1,55 +1,8 @@
 {
   "sections": {
-    "39ffc4ea-c4dc-460d-9afe-85c3caa4c622": {
-      "type": "section-slider-products",
-      "blocks": {
-        "eafa80e2-4c4d-47a3-b2e4-cc949303a33e": {
-          "type": "product",
-          "settings": {
-            "proposal_product": "fleece-retro-print-joggers-green"
-          }
-        },
-        "9d39a528-a910-4e81-b11f-21e46198b03f": {
-          "type": "product",
-          "settings": {
-            "proposal_product": "fleece-retro-print-joggers-green"
-          }
-        },
-        "acfdc817-128b-40b6-9cc9-796cea4f14e5": {
-          "type": "product",
-          "settings": {
-            "proposal_product": "кросівки-ultraboost-22-cold-rdy-2-0"
-          }
-        },
-        "9f1b115e-5a83-4fa1-9540-b8474ad86712": {
-          "type": "product",
-          "settings": {
-            "proposal_product": "fleece-retro-print-joggers-green-5"
-          }
-        },
-        "dcd0eca9-b403-4118-a556-1b68eece9b9e": {
-          "type": "product",
-          "settings": {
-            "proposal_product": "fleece-retro-print-joggers-green-4"
-          }
-        },
-        "cebf84aa-f259-403e-9cb7-252863fdeaf1": {
-          "type": "product",
-          "settings": {
-            "proposal_product": ""
-          }
-        }
-      },
-      "block_order": [
-        "eafa80e2-4c4d-47a3-b2e4-cc949303a33e",
-        "9d39a528-a910-4e81-b11f-21e46198b03f",
-        "acfdc817-128b-40b6-9cc9-796cea4f14e5",
-        "9f1b115e-5a83-4fa1-9540-b8474ad86712",
-        "dcd0eca9-b403-4118-a556-1b68eece9b9e",
-        "cebf84aa-f259-403e-9cb7-252863fdeaf1"
-      ],
+    "cda30115-3686-4481-8572-269a481fa42b": {
+      "type": "image-get-links",
       "settings": {
-        "slider_items": 3
       }
     },
     "image_banner": {
@@ -161,7 +114,7 @@
     }
   },
   "order": [
-    "39ffc4ea-c4dc-460d-9afe-85c3caa4c622",
+    "cda30115-3686-4481-8572-269a481fa42b",
     "image_banner",
     "featured_collection",
     "b8255216-d03d-4f75-ad56-ad9546391aed"
