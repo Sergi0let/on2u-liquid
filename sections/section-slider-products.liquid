@@ -15,7 +15,19 @@
             {% if block.settings.proposal_product != blank %}
               {% assign product = block.settings.proposal_product %}
               <div class="slider-product-proposal__slider-item">
-                <h4 class="slider-item__title">{{ product.title }}</h4>
+                <a href="{{ product.url }}" class="slider-item__link">
+                  <div class="slider-item__image">
+                    <img
+                      src="{{  product.featured_image | img_url: '700px' }}"
+                      alt="{{  product.featured_image.alt |  default: product.title }}"
+                      loading="lazy">
+                  </div>
+                  <h4 class="slider-item__title">{{ product.title }}</h4>
+                  {% if product.content != blank %}
+                    <div class="slider-itme__desc">{{ product.content | truncate: 200, "..." }}</div>
+                  {% endif %}
+                  <div class="slider-item__price">{{ product.price | money_with_currency }}</div>
+                </a>
               </div>
             {% endif %}
           {% endfor %}

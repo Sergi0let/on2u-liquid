@@ -20,15 +20,36 @@
           "settings": {
             "proposal_product": "кросівки-ultraboost-22-cold-rdy-2-0"
           }
+        },
+        "9f1b115e-5a83-4fa1-9540-b8474ad86712": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fleece-retro-print-joggers-green-5"
+          }
+        },
+        "dcd0eca9-b403-4118-a556-1b68eece9b9e": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fleece-retro-print-joggers-green-4"
+          }
+        },
+        "cebf84aa-f259-403e-9cb7-252863fdeaf1": {
+          "type": "product",
+          "settings": {
+            "proposal_product": ""
+          }
         }
       },
       "block_order": [
         "eafa80e2-4c4d-47a3-b2e4-cc949303a33e",
         "9d39a528-a910-4e81-b11f-21e46198b03f",
-        "acfdc817-128b-40b6-9cc9-796cea4f14e5"
+        "acfdc817-128b-40b6-9cc9-796cea4f14e5",
+        "9f1b115e-5a83-4fa1-9540-b8474ad86712",
+        "dcd0eca9-b403-4118-a556-1b68eece9b9e",
+        "cebf84aa-f259-403e-9cb7-252863fdeaf1"
       ],
       "settings": {
-        "include_margins": true
+        "slider_items": 3
       }
     },
     "image_banner": {
@@ -99,11 +120,50 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "b8255216-d03d-4f75-ad56-ad9546391aed": {
+      "type": "section-slider-products",
+      "blocks": {
+        "68500cdb-3592-470a-b0d6-0ef8b66ec0af": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fleece-retro-print-joggers-green"
+          }
+        },
+        "ed05b4be-a213-482b-b8ff-2e597e8dd36c": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fleece-retro-print-joggers-green-1"
+          }
+        },
+        "653140c2-da11-486f-955d-0fa1a8c1325c": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fleece-retro-print-joggers-green-2"
+          }
+        },
+        "2553a942-5b93-4189-b179-8e5b5c1031f8": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fleece-retro-print-joggers-green-4"
+          }
+        }
+      },
+      "block_order": [
+        "68500cdb-3592-470a-b0d6-0ef8b66ec0af",
+        "ed05b4be-a213-482b-b8ff-2e597e8dd36c",
+        "653140c2-da11-486f-955d-0fa1a8c1325c",
+        "2553a942-5b93-4189-b179-8e5b5c1031f8"
+      ],
+      "settings": {
+        "slider_items": 2
+      }
     }
   },
   "order": [
     "39ffc4ea-c4dc-460d-9afe-85c3caa4c622",
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "b8255216-d03d-4f75-ad56-ad9546391aed"
   ]
 }
