@@ -1,6 +1,36 @@
 <div class="page-width">
-  <div id="get_image_v1"></div>
-  <div id="get_image_v1_1"></div>
+  <h2>
+    Using snippets
+  </h2>
+  <div style="border: 1px solid orange;">
+    {% render "icon"
+      , icon: 'vimeo' %}
+  </div>
+  <div id="get_image_v1_1">
+    <h2>Hello get_image_v1_1
+    </h2>
+
+  </div>
+  <div>
+    <h2>Image v 3</h2>
+    <div style="border: 1px solid lightgreen;">
+      'picture_1' = {{ 'picture_1.webp' }}
+    </div>
+    <img
+      src="{{ 'picture_1.webp' | asset_url }}"
+      width="300"
+      alt="pictureNotfromAdmin">
+  </div>
+
+  <div>
+    <h2>Image v 5 from Admin</h2>
+    <div style="border: 1px solid lightblue;">
+      'https://cdn.shopify.com/s/files/1/0634/6617/6670/files/5.png?v=1702301734' = {{ 'https://cdn.shopify.com/s/files/1/0634/6617/6670/files/5.png?v=1702301734' }}
+      <img src="https://cdn.shopify.com/s/files/1/0634/6617/6670/files/5.png?v=1702301734" alt="picturefromAdmin">
+      {{ 'https: //cdn.shopify.com/s/files/1/0634/6617/6670/files/5.png?v=1702301734' | img_tag }}
+      {{ 'https://cdn.shopify.com/s/files/1/0634/6617/6670/files/5.png?v=1702301734' | img_tag }}
+    </div>
+  </div>
 </div>
 
 {% schema %}
@@ -15,8 +45,8 @@
         "label": "Get Image V1"
       }, {
         "type": "image_picker",
-        "id": "get_image_v1",
-        "label": "Get Image V1"
+        "id": "get_image_v2",
+        "label": "Image_picker without image"
       }
 
     ],
