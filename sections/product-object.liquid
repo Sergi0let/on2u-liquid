@@ -1,9 +1,52 @@
+<div class="page-width" style="border: 1px solid orange">
+  <h2>Дані які можемо отримати з обєкта "product"</h2>
+  <div>product.string - {{ product.title }}</div>
+  <div>product.number - {{ product.id }}</div>
+  <div>product.array - [{{ product.tags | join: ', ' }}]</div>
+
+  <div>product.collection - string {{ product.collections | json }}</div>
+  <div>product.boolean - {{ product.available }}</div>
+  <div>product.featured_image - {{ product.featured_image }}</div>
+  <div>product.featured_image.id - object  - {{ product.featured_image.id }}</div>
+  <div>product.variants | json - array with object {{ product.variants | json }}</div>
+  <div>product.variants.size - size(length) - {{ product.variants.size }}</div>
+  <div>product.variants[0].title == id - {{ product.variants[0].title }} == {{ product.variants[0].id }}</div>
+  {% if product.variants.size > 0 %}
+    <ul>
+      {% for variant in product.variants %}
+        <li>
+          {{ variant.title }} == {{ variant.id }}
+          <h4>Variant options "[]"</h4>
+          {% for option in variant.options %}
+            <ol>
+              {{ option }}
+            </ol>
+          {% endfor %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% if section.settings.collection != blank %}
+  {% assign collection = section.settings.collection %}
+  <h2>Collection title ===={{ collection.title }}</h2>
+  <div>Product count_collection.all_product_count = ({{ collection.all_products_count }})</div>
+  <div>Product count_collection.products.size = ({{ collection.products.size }})</div>
+{% endif %}
+
 {% schema %}
   {
     "name": "Product object",
     "tag": "section",
-    "class": "section",
-    "settings": [],
+    "class": "section object-section-product",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection",
+        "default": "men"
+      }
+    ],
     "blocks": [],
     "presets": [
       {

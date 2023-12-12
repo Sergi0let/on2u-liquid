@@ -1,5 +1,10 @@
 {
   "sections": {
+    "5dd553cd-d629-4053-b282-6607a1025b7a": {
+      "type": "product-object",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -96,6 +101,7 @@
     }
   },
   "order": [
+    "5dd553cd-d629-4053-b282-6607a1025b7a",
     "main",
     "related-products"
   ]

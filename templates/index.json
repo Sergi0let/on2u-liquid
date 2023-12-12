@@ -1,10 +1,5 @@
 {
   "sections": {
-    "19267888-2bd8-4e65-8e32-a714fd1cbb9c": {
-      "type": "product-object",
-      "settings": {
-      }
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -122,7 +117,6 @@
     }
   },
   "order": [
-    "19267888-2bd8-4e65-8e32-a714fd1cbb9c",
     "image_banner",
     "featured_collection",
     "b8255216-d03d-4f75-ad56-ad9546391aed",
