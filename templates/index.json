@@ -1,9 +1,8 @@
 {
   "sections": {
-    "cda30115-3686-4481-8572-269a481fa42b": {
-      "type": "image-get-links",
+    "19267888-2bd8-4e65-8e32-a714fd1cbb9c": {
+      "type": "product-object",
       "settings": {
-        "get_image_v1": "shopify:\/\/shop_images\/kyiv2021_45.jpg"
       }
     },
     "image_banner": {
@@ -109,15 +108,24 @@
         "653140c2-da11-486f-955d-0fa1a8c1325c",
         "2553a942-5b93-4189-b179-8e5b5c1031f8"
       ],
+      "disabled": true,
       "settings": {
         "slider_items": 2
+      }
+    },
+    "cda30115-3686-4481-8572-269a481fa42b": {
+      "type": "image-get-links",
+      "disabled": true,
+      "settings": {
+        "get_image_v1": "shopify:\/\/shop_images\/kyiv2021_45.jpg"
       }
     }
   },
   "order": [
-    "cda30115-3686-4481-8572-269a481fa42b",
+    "19267888-2bd8-4e65-8e32-a714fd1cbb9c",
     "image_banner",
     "featured_collection",
-    "b8255216-d03d-4f75-ad56-ad9546391aed"
+    "b8255216-d03d-4f75-ad56-ad9546391aed",
+    "cda30115-3686-4481-8572-269a481fa42b"
   ]
 }
