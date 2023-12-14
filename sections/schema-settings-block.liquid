@@ -1,3 +1,5 @@
+{% comment %} -------Global setings--------- {% endcomment %}
+
 {% if settings.enable_marketing == true %}
   <div class="page-width" style="border: 1px solid purple;"></div>
   {% if settings.facebook_id != blank %}
@@ -13,17 +15,152 @@
     </script>
   {% endif %}
 {% endif %}
-<div>
+<div class="page-width">
   settings.cart_type == {{ settings.cart_type }}</div>
+
+{% comment %} -------Local setings--------- {% endcomment %}
+<div class="section-settings-blocks__section">
+  {% if section.settings.title != blank %}
+    <h2>{{ section.settings.title }}</h2>
+    <div>
+      {{ section.settings.description }}
+    </div>
+  {% endif %}
+  {% if section.blocks.size > 0 %}
+    <ul>
+      {% for block in section.blocks %}
+        {% if block.settings.title != blank %}
+          <li>
+            {{ block.type }} - {{ block.settings.title }}
+            <ul>
+              {% for i in (1..7) %}
+                {% assign count_name = "benefit_" | append: i %}
+                {% assign benefit_title = block.settings[count_name] %}
+
+                {% if benefit_title != blank %}
+                  <li>
+                    {{ benefit_title }}
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <div>
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank and block.type == 'offer' %}
+          <img src="{{ block.settings.image | img_url: 'small' }}" alt="ddd">
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
 
 {% schema %}
   {
     "name": "Shema section blocks",
     "tag": "section",
-    "class": "section",
+    "class": "section section-settings-blocks",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section title"
+      }, {
+        "type": "richtext",
+        "id": "description",
+        "label": "Section description",
+        "default": "<p>Our benefit description</p>"
+      }
+    ],
+    "max_blocks": 5,
+    "blocks": [
+      {
+        "name": "Benefit",
+        "type": "benefit",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Benefit title"
+          },
+          {
+            "type": "text",
+            "id": "benefit_1",
+            "label": "Benefit_1",
+            "default": "benefit text1"
+          },
+          {
+            "type": "text",
+            "id": "benefit_2",
+            "label": "Benefit_2",
+            "default": "benefit text2"
+          },
+          {
+            "type": "text",
+            "id": "benefit_3",
+            "label": "Benefit_3",
+            "default": "benefit text3"
+          }, {
+            "type": "text",
+            "id": "benefit_4",
+            "label": "Benefit_4",
+            "default": "benefit text4"
+          }, {
+            "type": "text",
+            "id": "benefit_5",
+            "label": "Benefit_5",
+            "default": "benefit text5"
+          }, {
+            "type": "text",
+            "id": "benefit_6",
+            "label": "Benefit_6"
+          }, {
+            "type": "text",
+            "id": "benefit_7",
+            "label": "Benefit_7",
+            "default": "benefit text5"
+          }
+        ]
+      }, {
+        "name": "Offer",
+        "type": "offer",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Offer Image"
+          }
+        ]
+      }
+    ],
     "presets": [
       {
-        "name": "Shema section blocks"
+        "name": "Shema section blocks",
+        "settings": {
+          "title": "Bennefit"
+        },
+        "blocks": [
+          {
+            "type": "benefit",
+            "settings": {
+              "title": "Free shipping"
+            }
+          }, {
+            "type": "benefit",
+            "settings": {
+              "title": "Color watches"
+            }
+          }, {
+            "type": "benefit",
+            "settings": {
+              "title": "Anoter something"
+            }
+          }
+        ]
       }
     ]
   }
