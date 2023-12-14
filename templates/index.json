@@ -1,5 +1,10 @@
 {
   "sections": {
+    "cf90ea43-4035-4384-8943-40686977e0fd": {
+      "type": "schema-settings-block",
+      "settings": {
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -117,6 +122,7 @@
     }
   },
   "order": [
+    "cf90ea43-4035-4384-8943-40686977e0fd",
     "image_banner",
     "featured_collection",
     "b8255216-d03d-4f75-ad56-ad9546391aed",

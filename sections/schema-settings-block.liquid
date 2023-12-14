@@ -1,0 +1,30 @@
+{% if settings.enable_marketing == true %}
+  <div class="page-width" style="border: 1px solid purple;"></div>
+  {% if settings.facebook_id != blank %}
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        console.log("facebook_id", "{{ settings.facebook_id }}")
+      })
+    </script>
+  {% endif %}
+  {% if settings.another_script != blank %}
+    <script>
+      {{ settings.another_script }}
+    </script>
+  {% endif %}
+{% endif %}
+<div>
+  settings.cart_type == {{ settings.cart_type }}</div>
+
+{% schema %}
+  {
+    "name": "Shema section blocks",
+    "tag": "section",
+    "class": "section",
+    "presets": [
+      {
+        "name": "Shema section blocks"
+      }
+    ]
+  }
+{% endschema %}
